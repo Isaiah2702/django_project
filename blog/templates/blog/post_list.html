@@ -46,6 +46,20 @@
         <h1><a href="/">Django Girls Blog</a></h1>
     </header>
 
+    <!-- Static Posts -->
+    <article>
+        <time>Published: April 16, 2025 – 10:30 AM</time>
+        <h2><a href="#">My First Post</a></h2>
+        <p>Welcome to the very first post on this blog! This platform is built with Django, and it's here to help you learn and grow as a developer.</p>
+    </article>
+
+    <article>
+        <time>Published: April 16, 2025 – 2:15 PM</time>
+        <h2><a href="#">My Second Post</a></h2>
+        <p>In this post, we dive deeper into how Django templates work and how you can make your blog dynamic using views and models. Stay tuned!</p>
+    </article>
+
+    <!-- Dynamic Posts from Django -->
     {% for post in posts %}
     <article>
         <time>Published: {{ post.published_date }}</time>
