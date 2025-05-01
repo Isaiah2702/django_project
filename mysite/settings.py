@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d2bpp_npno%8dsnx7cv6epm8d-luw@=^(eb)77ds$^e!wpx#(d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'isaiahschool.pythonanywhere.com', 'your-heroku-app.herokuapp.com']
 
 
 # Application definition
@@ -128,3 +128,12 @@ STATIC_ROOT = BASE_DIR / 'static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+
+
+# Static files for Heroku deployment
+import os
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')

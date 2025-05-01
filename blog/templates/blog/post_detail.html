@@ -20,4 +20,16 @@
     </article>
     
     <p><a href="{% url 'post_list' %}">← Back to all posts</a></p>
+
+<h3>Comments:</h3>
+{% for comment in post.comments.all %}
+    <p><strong>{{ comment.author }}</strong>: {{ comment.text }}</p>
+{% empty %}
+    <p>No comments yet.</p>
+{% endfor %}
+
+{% if user.is_authenticated %}
+  <a href="{% url 'add_comment_to_post' pk=post.pk %}">Add a comment</a>
+{% endif %}
+
 {% endblock %}
